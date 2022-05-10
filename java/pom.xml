@@ -2,15 +2,19 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>io.protocol_samples</groupId>
-  <artifactId>java_lang</artifactId>
+  <artifactId>java</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-  <name>java_lang</name>
+  <modules>
+    <module>grpc</module>
+    <module>http</module>
+  </modules>
+  <name>java</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
+  <packaging>pom</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
