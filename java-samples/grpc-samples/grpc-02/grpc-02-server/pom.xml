@@ -6,11 +6,12 @@
         <artifactId>grpc-samples</artifactId>
         <groupId>io.protocol</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../../grpc-samples</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>grpc-02</artifactId>
-    <name>grpc-02</name>
+    <artifactId>grpc-02-server</artifactId>
+    <name>grpc-02-server</name>
 
 
     <dependencies>
