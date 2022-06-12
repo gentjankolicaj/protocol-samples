@@ -124,4 +124,9 @@ int32 status=2;
 }
 ```
 
+## Note:
+- Everything on server-side is implemented as async by default.
+- It is decision of a client whether to block or not.
+
+
 
