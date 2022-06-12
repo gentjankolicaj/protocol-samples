@@ -17,6 +17,7 @@
     <modules>
         <module>grpc-01</module>
         <module>grpc-02</module>
+        <module>grpc-03</module>
     </modules>
 
 
