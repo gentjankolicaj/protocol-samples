@@ -5,7 +5,8 @@ syntax="proto3";
 option java_package="io.protocol.grpc01";
 
 option java_multiple_files=true;
-option  java_outer_classname="Greeter";
+
+option java_outer_classname="GreeterProto";
 
 
 //The greet service definition

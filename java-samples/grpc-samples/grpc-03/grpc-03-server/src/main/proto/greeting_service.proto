@@ -5,6 +5,7 @@ package io.protocol.grpc03;
 //Creates multiple java files , else if false create a jar with files
 option java_multiple_files=true;
 
+option java_outer_classname="GreetingServiceProto";
 
 enum Sentiment{
   HAPPY=0;

@@ -11,8 +11,8 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>grpc-03-client</artifactId>
-    <name>grpc-03-client</name>
+    <artifactId>grpc-04-client</artifactId>
+    <name>grpc-04-client</name>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -38,9 +38,11 @@
             <artifactId>annotations-api</artifactId>
             <version>6.0.53</version>
         </dependency>
+
+        <!-- Add protoc generate dependencies from grpc-04-server -->
         <dependency>
             <groupId>io.protocol</groupId>
-            <artifactId>grpc-03-server</artifactId>
+            <artifactId>grpc-04-server</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

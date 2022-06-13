@@ -10,8 +10,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>grpc-01</artifactId>
-    <name>grpc-01</name>
+    <artifactId>grpc-01-server</artifactId>
+    <name>grpc-01-server</name>
 
 
     <dependencies>
@@ -38,7 +38,6 @@
             <version>6.0.53</version>
         </dependency>
     </dependencies>
-
 
     <build>
         <extensions>
