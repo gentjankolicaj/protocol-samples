@@ -1,0 +1,27 @@
+syntax ="proto3";
+
+
+option java_package="io.protocol.grpc06";
+option java_multiple_files=true;
+
+//There 4 types of api with gRPC:
+//1. Unary -> Single Request & Single Response
+//2. Server streaming -> Client : single request , Server : 0-n responses.
+//3. Client streaming -> Client : 0-n requests , Server : 1 response.
+//4. Bi-directional streaming -> Client : 0-n requests , Server : 0-n responses.
+
+message GreetingRequest{
+  string content=1;
+}
+
+message GreetingResponse{
+  string result=1;
+  GreetingRequest request=2;
+}
+
+//Define service & rpc
+service GreetingService{
+
+  rpc greet(GreetingRequest) returns(stream GreetingResponse);
+
+}
