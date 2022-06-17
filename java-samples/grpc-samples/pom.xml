@@ -28,6 +28,9 @@
 
         <module>grpc-05/grpc-05-client</module>
         <module>grpc-05/grpc-05-server</module>
+
+        <module>grpc-06/grpc-06-client</module>
+        <module>grpc-06/grpc-06-server</module>
     </modules>
 
 

@@ -1,0 +1,18 @@
+syntax="proto3";
+
+option java_multiple_files=true;
+option java_package="io.protocol.grpc06";
+option java_outer_classname="PrimeServiceProto";
+
+message PrimeRequest{
+
+}
+
+message PrimeResponse{
+ int32  value=1;
+}
+
+service PrimeService{
+
+  rpc primes(PrimeRequest) returns (stream PrimeResponse);
+}

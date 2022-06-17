@@ -1,4 +1,4 @@
-package io.protocol.grpc05.server;
+package io.protocol.grpc06.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
-public class Grpc05Server {
+public class Grpc06Server {
 
     static final int PORT=8080;
     public static void main(String[] args){
@@ -16,8 +16,7 @@ public class Grpc05Server {
             //Create server object
             //And register service , in our case is greetingServiceImpl
             final Server server = ServerBuilder.forPort(PORT)
-                    .addService(new CalculatorServiceImpl())
-                    .addService(new GreetingServiceImpl())
+                    .addService(new PrimeServiceImpl())
                     .build();
 
             //Start server
