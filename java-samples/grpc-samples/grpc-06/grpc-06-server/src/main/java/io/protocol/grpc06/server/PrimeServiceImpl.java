@@ -10,15 +10,18 @@ public class PrimeServiceImpl extends PrimeServiceGrpc.PrimeServiceImplBase {
     @Override
     public void primes(PrimeRequest request, StreamObserver<PrimeResponse> responseObserver) {
         try{
-            int counter=0;
-            int max=10000000;
-            while(counter<=max){
-                responseObserver.onNext(PrimeResponse.newBuilder().setValue(counter).build());
-                counter++;
-                Thread.sleep(2);
-            }
+           int divisor=2;
+           int number=request.getNumber();
+           while(number>1){
+               if(number%divisor==0){
+                  number=number/divisor;
+                 responseObserver.onNext(PrimeResponse.newBuilder().setPrimeFactor(divisor).build());
+               }else{
+                  divisor=divisor+1;
+               }
+           }
         }catch (Exception e){
-            e.printStackTrace();
+           responseObserver.onError(e);
         }
         responseObserver.onCompleted();
     }

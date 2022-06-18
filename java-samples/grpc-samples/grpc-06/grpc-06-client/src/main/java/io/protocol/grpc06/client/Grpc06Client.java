@@ -8,7 +8,6 @@ import io.protocol.grpc06.PrimeServiceGrpc;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Iterator;
-import java.util.Random;
 
 @Slf4j
 public class Grpc06Client {
@@ -23,8 +22,8 @@ public class Grpc06Client {
 
 
         PrimeServiceGrpc.PrimeServiceBlockingStub stub=PrimeServiceGrpc.newBlockingStub(managedChannel);
-        Iterator<PrimeResponse> responseIterator=stub.primes(PrimeRequest.newBuilder().build());
-        responseIterator.forEachRemaining(c->System.out.println(c));
+        Iterator<PrimeResponse> responseIterator=stub.primes(PrimeRequest.newBuilder().setNumber(567890).build());
+        responseIterator.forEachRemaining(response->log.info("{}",response.getPrimeFactor()));
 
 
         //Shutdown channel
