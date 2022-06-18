@@ -38,6 +38,9 @@
         <module>grpc-08/grpc-08-client</module>
         <module>grpc-08/grpc-08-server</module>
 
+        <module>grpc-09/grpc-09-client</module>
+        <module>grpc-09/grpc-09-server</module>
+
     </modules>
 
 
