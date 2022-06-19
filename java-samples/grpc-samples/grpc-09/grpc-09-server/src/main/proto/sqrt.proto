@@ -10,5 +10,5 @@ message SqrtRequest{
 }
 
 message SqrtResponse{
-  double max=1;
+  double value=1;
 }

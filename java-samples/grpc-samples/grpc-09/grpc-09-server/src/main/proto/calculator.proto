@@ -23,5 +23,7 @@ service CalculatorService{
   //Returns Status.INVALID_ARGUMENT if sqrt <=0
   rpc sqrt(SqrtRequest) returns(SqrtResponse);
 
+  rpc sqrtWithDeadline(SqrtRequest) returns(SqrtResponse);
+
 
 }

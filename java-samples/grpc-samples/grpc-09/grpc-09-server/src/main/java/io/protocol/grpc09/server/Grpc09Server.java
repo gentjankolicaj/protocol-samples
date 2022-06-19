@@ -16,6 +16,7 @@ public class Grpc09Server {
             //Create server object
             //And register service , in our case is greetingServiceImpl
             final Server server = ServerBuilder.forPort(PORT)
+                    .addService(new CalculatorServiceImpl())
                     .build();
 
             //Start server
