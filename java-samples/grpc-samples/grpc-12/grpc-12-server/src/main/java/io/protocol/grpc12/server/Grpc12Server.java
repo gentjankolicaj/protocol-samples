@@ -1,4 +1,4 @@
-package io.protocol.grpc11.server;
+package io.protocol.grpc12.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
-public class Grpc11Server {
+public class Grpc12Server {
 
     static final int PORT=8080;
     public static void main(String[] args){

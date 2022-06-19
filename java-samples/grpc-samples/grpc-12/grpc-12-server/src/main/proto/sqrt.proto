@@ -1,0 +1,14 @@
+syntax="proto3";
+
+
+package calculator;
+option java_package="io.protocol.grpc12";
+option java_multiple_files=true;
+
+message SqrtRequest{
+  double number=1;
+}
+
+message SqrtResponse{
+  double value=1;
+}
