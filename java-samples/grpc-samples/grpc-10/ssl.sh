@@ -28,4 +28,4 @@ openssl req -passin pass:1111 -new -key server.key -out server.csr -subj "/CN=${
 openssl x509 -req -extfile <(printf "subjectAltName=DNS:%s" ${SERVER_CN}) -passin pass:1111 -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt
 
 # Step 5: Convert the server certificate to .pem format (server.pem) - usable by gRPC
-openssl pkcs8 -topk8 -nocrypt -passin pass:1111 -in server.key -out server.pem-passin pass:2222 -in server.key -out server.pem
+openssl pkcs8 -topk8 -nocrypt -passin pass:1111 -in server.key -out server.pem-passin pass:2222 -in server.key -out server.tas

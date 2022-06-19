@@ -1,30 +1,35 @@
 package io.protocol.grpc10.client;
 
 import io.grpc.*;
-import io.protocol.grpc09.CalculatorServiceGrpc;
-import io.protocol.grpc09.SqrtRequest;
-import io.protocol.grpc09.SqrtResponse;
+import io.protocol.grpc10.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 
 @Slf4j
-public class Grpc10Client {
+public class Grpc10ClientTls {
 
     static final String HOSTNAME = "localhost";
-    static final int PORT = 8080;
+    static final int PORT = 50051;
 
-    public static void main(String[] args) throws InterruptedException {
-        ManagedChannel managedChannel = ManagedChannelBuilder.forAddress(HOSTNAME, PORT)
-                .usePlaintext()
+    public static void main(String[] args) throws InterruptedException, IOException {
+        //Credentials for channel
+        ChannelCredentials channelCredentials=TlsChannelCredentials.newBuilder()
+                .trustManager(
+                        new File("ca.crt")
+                ).build();
+
+
+        //Build channel with CA trust certificate
+        ManagedChannel managedChannel =Grpc.newChannelBuilderForAddress(HOSTNAME, PORT,channelCredentials)
                 .build();
 
         //Note :
         //We use Stub for streaming
         //We use BlockingStub for Unary
-
-
         callSqrt(managedChannel);
         callSqrtWithDeadline(managedChannel);
 

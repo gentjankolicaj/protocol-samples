@@ -44,6 +44,10 @@
         <module>grpc-10/grpc-10-client</module>
         <module>grpc-10/grpc-10-server</module>
 
+
+        <module>grpc-11/grpc-11-client</module>
+        <module>grpc-11/grpc-11-server</module>
+
     </modules>
 
 

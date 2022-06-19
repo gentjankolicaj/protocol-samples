@@ -1,26 +1,37 @@
 package io.protocol.grpc10.server;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
+import io.grpc.*;
 import lombok.extern.slf4j.Slf4j;
+
+import java.io.File;
+import java.io.IOException;
 
 
 @Slf4j
-public class Grpc10Server {
+public class Grpc10ServerTls {
 
-    static final int PORT=8080;
-    public static void main(String[] args){
+    static final int PORT=50051;
+    public static void main(String[] args) throws IOException {
 
         try {
 
+
+            // server.crt: Server certificate signed by the CA (this would be sent back by the CA owner) - keep on server
+            // server.pem: Conversion of server.key into a format gRPC likes (this shouldn't be shared)
+            ServerCredentials serverCredentials= TlsServerCredentials.create( Grpc10ServerTls.class.getResourceAsStream("/server.crt"), Grpc10ServerTls.class.getResourceAsStream("/server.pem"));
+
             //Create server object
-            //And register service , in our case is greetingServiceImpl
-            final Server server = ServerBuilder.forPort(PORT)
+            //Server uses TLS,
+            final Server server = Grpc.newServerBuilderForPort(PORT,serverCredentials)
                     .addService(new CalculatorServiceImpl())
                     .build();
 
             //Start server
             server.start();
+
+            log.info("Server started.");
+            log.info("Server listening on port {}",PORT);
+
 
             //When jvm receives termination signal, this shutdown hook is invoke for execution
             Runtime.getRuntime().addShutdownHook(new Thread(()->{
