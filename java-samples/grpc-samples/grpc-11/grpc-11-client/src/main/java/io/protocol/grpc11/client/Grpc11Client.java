@@ -4,9 +4,7 @@ import io.grpc.*;
 import io.protocol.grpc11.*;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -24,7 +22,6 @@ public class Grpc11Client {
         //Note :
         //We use Stub for streaming
         //We use BlockingStub for Unary
-
         callSqrt(managedChannel);
         callSqrtWithDeadline(managedChannel);
 
@@ -77,7 +74,6 @@ public class Grpc11Client {
         double[] array = {1, 2, 3, -4, 5, 6, 7, 8, 0, -1, 10, -11};
         for (double var : array) {
             try {
-
                 SqrtRequest sqrtRequest = SqrtRequest.newBuilder().setNumber(var).build();
                 SqrtResponse response = stub.sqrt(sqrtRequest);
                 log.info("Response sqrt : {} ", response.getValue());

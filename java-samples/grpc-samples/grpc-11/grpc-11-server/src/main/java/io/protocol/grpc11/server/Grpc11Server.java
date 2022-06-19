@@ -2,6 +2,7 @@ package io.protocol.grpc11.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.protobuf.services.ProtoReflectionService;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -12,10 +13,10 @@ public class Grpc11Server {
     public static void main(String[] args){
 
         try {
-
             //Create server object
             //And register service , in our case is greetingServiceImpl
             final Server server = ServerBuilder.forPort(PORT)
+                    .addService(ProtoReflectionService.newInstance())
                     .addService(new CalculatorServiceImpl())
                     .build();
 
