@@ -51,6 +51,9 @@
         <module>grpc-12/grpc-12-client</module>
         <module>grpc-12/grpc-12-server</module>
 
+        <module>grpc-13/blog-grpc-client</module>
+        <module>grpc-13/blog-grpc-server</module>
+
     </modules>
 
 
