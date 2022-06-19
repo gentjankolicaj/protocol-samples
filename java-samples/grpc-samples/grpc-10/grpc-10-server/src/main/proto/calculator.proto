@@ -1,0 +1,29 @@
+syntax="proto3";
+
+
+package calculator;
+
+option java_multiple_files=true;
+option java_outer_classname="CalculatorServiceProto";
+option java_package="io.protocol.grpc10";
+
+import "avg.proto";
+import "max.proto";
+import "sqrt.proto";
+import "prime.proto";
+
+
+service CalculatorService{
+
+  rpc primes(PrimeRequest) returns (stream PrimeResponse);
+  rpc average(stream AverageRequest) returns (AverageResponse);
+  rpc max(stream MaxRequest) returns (stream MaxResponse);
+
+
+  //Returns Status.INVALID_ARGUMENT if sqrt <=0
+  rpc sqrt(SqrtRequest) returns(SqrtResponse);
+
+  rpc sqrtWithDeadline(SqrtRequest) returns(SqrtResponse);
+
+
+}

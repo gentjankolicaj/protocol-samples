@@ -41,6 +41,9 @@
         <module>grpc-09/grpc-09-client</module>
         <module>grpc-09/grpc-09-server</module>
 
+        <module>grpc-10/grpc-10-client</module>
+        <module>grpc-10/grpc-10-server</module>
+
     </modules>
 
 
