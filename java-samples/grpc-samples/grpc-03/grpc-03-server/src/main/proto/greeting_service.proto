@@ -1,0 +1,41 @@
+syntax="proto3";
+
+package io.protocol.grpc03;
+
+//Creates multiple java files , else if false create a jar with files
+option java_multiple_files=true;
+
+option java_outer_classname="GreetingServiceProto";
+
+enum Sentiment{
+  HAPPY=0;
+  SLEEPY=1;
+  ANGRY=2;
+  SAD=3;
+}
+
+message HelloWorldRequest{
+  string firstname=1; // Number 1 is tag.Tag is binary representation of this field
+  string lastname=2;
+  int64 age=3;
+  Sentiment sentiment=4; // Number 4 is a tag.Tag is binary representation of this field
+
+  //Define a list of strings
+  repeated string hobbies=5;
+
+  //Define a map
+  map<string,string> bagOfTricks=6;
+}
+
+
+message HelloWorldResponse{
+  string greeting=1;
+}
+
+//define a service
+service GreetingService {
+
+  //Define a rpc for defined service
+  rpc greeting(HelloWorldRequest) returns(HelloWorldResponse);
+
+}

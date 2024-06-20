@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java-samples</artifactId>
+        <groupId>io.protocol</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>grpc-samples</artifactId>
+    <name>grpc-samples</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>grpc-01/grpc-01-client</module>
+        <module>grpc-01/grpc-01-server</module>
+
+        <module>grpc-02/grpc-02-server</module>
+        <module>grpc-02/grpc-02-client</module>
+
+        <module>grpc-03/grpc-03-server</module>
+        <module>grpc-03/grpc-03-client</module>
+
+        <module>grpc-04/grpc-04-client</module>
+        <module>grpc-04/grpc-04-server</module>
+
+        <module>grpc-05/grpc-05-client</module>
+        <module>grpc-05/grpc-05-server</module>
+
+        <module>grpc-06/grpc-06-client</module>
+        <module>grpc-06/grpc-06-server</module>
+
+        <module>grpc-07/grpc-07-client</module>
+        <module>grpc-07/grpc-07-server</module>
+
+        <module>grpc-08/grpc-08-client</module>
+        <module>grpc-08/grpc-08-server</module>
+
+        <module>grpc-09/grpc-09-client</module>
+        <module>grpc-09/grpc-09-server</module>
+
+        <module>grpc-10/grpc-10-client</module>
+        <module>grpc-10/grpc-10-server</module>
+
+
+        <module>grpc-11/grpc-11-client</module>
+        <module>grpc-11/grpc-11-server</module>
+
+        <module>grpc-12/grpc-12-client</module>
+        <module>grpc-12/grpc-12-server</module>
+
+        <module>grpc-13/blog-grpc-client</module>
+        <module>grpc-13/blog-grpc-server</module>
+    </modules>
+
+
+    <build>
+           <plugins>
+                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean.version}</version>
+                </plugin>
+                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven-install.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy.version}</version>
+                </plugin>
+                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven-project-info-reports}</version>
+                </plugin>
+            </plugins>
+    </build>
+
+</project>
