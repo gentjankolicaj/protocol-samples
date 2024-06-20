@@ -1,12 +1,8 @@
 package io.protocol.blog.client;
 
-import io.grpc.*;
-import io.protocol.grpc13.*;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import lombok.extern.slf4j.Slf4j;
-
-
-import java.util.concurrent.TimeUnit;
-
 
 @Slf4j
 public class BlogGrpcClient {
