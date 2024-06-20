@@ -1,2 +1,5 @@
-package io.protocol.grpc05.server;public class CalculatorServiceImpl {
+package io.protocol.grpc05.server;
+
+public class CalculatorServiceImpl {
+
 }

@@ -1,18 +1,18 @@
-syntax="proto3";
+syntax = "proto3";
 
 //Specify package to use for our generated classes
 //If no explicit java_package is given
-option java_package="io.protocol.grpc01";
+option java_package = "io.protocol.grpc01";
 
-option java_multiple_files=true;
+option java_multiple_files = true;
 
-option java_outer_classname="GreeterProto";
+option java_outer_classname = "GreeterProto";
 
 
 //The greet service definition
 service Greeter{
   //declare a rpc with signature
-   rpc SayHello(HelloRequest) returns (HelloResponse){}
+  rpc SayHello(HelloRequest) returns (HelloResponse){}
 
   //declare a rpc with signature
   rpc SayHelloAgain(HelloRequest) returns (HelloResponse){}
@@ -24,5 +24,5 @@ message HelloRequest{
 }
 
 message HelloResponse{
-  string message=1;
+  string message = 1;
 }

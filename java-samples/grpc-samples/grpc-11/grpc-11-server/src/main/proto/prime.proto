@@ -1,15 +1,15 @@
-syntax="proto3";
+syntax = "proto3";
 
 package calculator;
 
-option java_multiple_files=true;
-option java_package="io.protocol.grpc11";
+option java_multiple_files = true;
+option java_package = "io.protocol.grpc11";
 
 message PrimeRequest{
-  int32 number=1;
+  int32 number = 1;
 
 }
 
 message PrimeResponse{
- int32  primeFactor=1;
+  int32  primeFactor = 1;
 }

@@ -5,7 +5,7 @@ import io.protocol.blog.server.dao.BlogDaoImpl;
 
 public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
 
-    private BlogDaoImpl blogDao;
+  private BlogDaoImpl blogDao;
 
 
 }

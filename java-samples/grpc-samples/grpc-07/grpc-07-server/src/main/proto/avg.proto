@@ -1,16 +1,16 @@
-syntax="proto3";
+syntax = "proto3";
 
 package io.protocol.grpc07;
 
-option java_multiple_files=true;
-option java_outer_classname="AverageServiceProto";
+option java_multiple_files = true;
+option java_outer_classname = "AverageServiceProto";
 
 message AverageRequest{
-  int32 number=1;
+  int32 number = 1;
 }
 
 message AverageResponse{
- int32  average=1;
+  int32  average = 1;
 }
 
 service AverageService{

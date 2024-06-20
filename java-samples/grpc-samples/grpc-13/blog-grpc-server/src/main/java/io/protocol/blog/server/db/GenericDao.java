@@ -2,46 +2,43 @@ package io.protocol.blog.server.db;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-
 import java.util.List;
 import java.util.Optional;
 
-public abstract class GenericDao<T,I> {
+public abstract class GenericDao<T, I> {
 
 
-   abstract List<T> findAll();
-   abstract Optional<T> find(I id);
-   abstract   T save(T t);
-    abstract void update(T t);
-   abstract void delete(T t);
+  public static MongoClient mongoClient;
 
+  static {
+    //Init mongo client object when class is loaded into memory
+    mongoClient = init();
 
+    //Add shutdown hook to close mongo connection when jvm gets termination signal
+    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+      destroy();
+    }));
+  }
 
+  static MongoClient init() {
+    String connectionString = "mongodb://johndoe:johndoe@localhost:27017/";
+    MongoClient mongoClient = MongoClients.create(connectionString);
+    return mongoClient;
+  }
 
+  static void destroy() {
+    mongoClient.close();
+  }
 
-    public static MongoClient mongoClient;
+  abstract List<T> findAll();
 
-    static{
-        //Init mongo client object when class is loaded into memory
-        mongoClient=init();
+  abstract Optional<T> find(I id);
 
-        //Add shutdown hook to close mongo connection when jvm gets termination signal
-        Runtime.getRuntime().addShutdownHook(new Thread(()->{
-            destroy();
-        }));
-    }
+  abstract T save(T t);
 
-    static MongoClient init(){
-        String connectionString="mongodb://johndoe:johndoe@localhost:27017/";
-        MongoClient mongoClient= MongoClients.create(connectionString);
-        return mongoClient;
-    }
+  abstract void update(T t);
 
-    static void destroy(){
-        mongoClient.close();
-    }
-
-
+  abstract void delete(T t);
 
 
 }

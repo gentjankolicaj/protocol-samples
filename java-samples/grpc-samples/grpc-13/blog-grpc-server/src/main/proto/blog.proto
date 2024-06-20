@@ -1,22 +1,22 @@
-syntax ="proto3";
+syntax = "proto3";
 
 package blog;
 
-option java_package="io.protocol.blog.server";
-option java_multiple_files=true;
-option java_outer_classname="BlogServiceProto";
+option java_package = "io.protocol.blog.server";
+option java_multiple_files = true;
+option java_outer_classname = "BlogServiceProto";
 
 import "google/protobuf/empty.proto";
 
 message Blog{
-  string id=1;
-  string author=2;
-  string title=3;
-  string content=4;
+  string id = 1;
+  string author = 2;
+  string title = 3;
+  string content = 4;
 }
 
 message BlogId{
-  string id=1;
+  string id = 1;
 }
 
 service BlogService{

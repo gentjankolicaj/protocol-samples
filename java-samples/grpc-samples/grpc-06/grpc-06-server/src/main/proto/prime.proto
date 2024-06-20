@@ -1,16 +1,16 @@
-syntax="proto3";
+syntax = "proto3";
 
-option java_multiple_files=true;
-option java_package="io.protocol.grpc06";
-option java_outer_classname="PrimeServiceProto";
+option java_multiple_files = true;
+option java_package = "io.protocol.grpc06";
+option java_outer_classname = "PrimeServiceProto";
 
 message PrimeRequest{
-  int32 number=1;
+  int32 number = 1;
 
 }
 
 message PrimeResponse{
- int32  primeFactor=1;
+  int32  primeFactor = 1;
 }
 
 service PrimeService{

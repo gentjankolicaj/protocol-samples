@@ -1,2 +1,5 @@
-package io.protocol.grpc05.server;public class Grpc05Server {
+package io.protocol.grpc05.server;
+
+public class Grpc05Server {
+
 }

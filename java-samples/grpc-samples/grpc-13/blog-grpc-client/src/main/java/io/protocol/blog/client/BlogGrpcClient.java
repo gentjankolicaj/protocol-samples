@@ -12,19 +12,16 @@ public class BlogGrpcClient {
 
     public static void main(String[] args) throws InterruptedException {
         ManagedChannel managedChannel = ManagedChannelBuilder.forAddress(HOSTNAME, PORT)
-                .usePlaintext()
-                .build();
+            .usePlaintext()
+            .build();
 
         //Note :
         //We use Stub for streaming
         //We use BlockingStub for Unary
 
-
         //Shutdown channel
         managedChannel.shutdown();
     }
-
-
 
 
 }

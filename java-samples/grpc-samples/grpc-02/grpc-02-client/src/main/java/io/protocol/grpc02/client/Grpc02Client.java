@@ -9,29 +9,31 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Grpc02Client {
-     static final String ADDRESS="localhost";
-     static final int PORT=7070;
-    public static void main(String[] args){
-        log.info("Building managed channel...");
-        ManagedChannel managedChannel= ManagedChannelBuilder.forAddress(ADDRESS,PORT)
-                .usePlaintext()
-                .build();
 
+  static final String ADDRESS = "localhost";
+  static final int PORT = 7070;
 
-        //Create stub
-        log.info("Creating blocking stub ...");
-        RouteGuideGrpc.RouteGuideBlockingStub blockingStub=RouteGuideGrpc.newBlockingStub(managedChannel);
+  public static void main(String[] args) {
+    log.info("Building managed channel...");
+    ManagedChannel managedChannel = ManagedChannelBuilder.forAddress(ADDRESS, PORT)
+        .usePlaintext()
+        .build();
 
-        //Build request
-        Point request= Point.newBuilder()
-                .setLatitude(101)
-                .setLongitude(202)
-                .build();
+    //Create stub
+    log.info("Creating blocking stub ...");
+    RouteGuideGrpc.RouteGuideBlockingStub blockingStub = RouteGuideGrpc.newBlockingStub(
+        managedChannel);
 
-        //Send request
-      Feature feature=blockingStub.getFeature(request);
+    //Build request
+    Point request = Point.newBuilder()
+        .setLatitude(101)
+        .setLongitude(202)
+        .build();
 
-      log.info("Response receive {}",feature);
+    //Send request
+    Feature feature = blockingStub.getFeature(request);
 
-    }
+    log.info("Response receive {}", feature);
+
+  }
 }
